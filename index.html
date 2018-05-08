@@ -1,0 +1,255 @@
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>陆金所对公票据系统</title>
+	<link rel="shortcut icon" href="img/favicon.ico" />
+	<!-- bootstrap - css -->
+	<link href="themes/css/bootstrap.css" rel="stylesheet">
+	<!-- core - css -->
+	<link href="themes/css/style.css" rel="stylesheet">
+	<link href="themes/blue/core.css" id="bjui-link-theme" rel="stylesheet">
+	<!-- plug - css -->
+	<link href="plugins/kindeditor_4.1.10/themes/default/default.css" rel="stylesheet">
+	<link href="plugins/colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+	<link href="plugins/niceValidator/jquery.validator.css" rel="stylesheet">
+	<link href="plugins/bootstrapSelect/bootstrap-select.css" rel="stylesheet">
+	<link href="themes/css/FA/css/font-awesome.min.css" rel="stylesheet">
+	<!--[if lte IE 7]>
+	<link href="themes/css/ie7.css" rel="stylesheet">
+	<![endif]-->
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lte IE 9]>
+	    <script src="other/html5shiv.min.js"></script>
+	    <script src="other/respond.min.js"></script>
+	<![endif]-->
+	<!-- jquery -->
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/jquery.cookie.js"></script>
+	<!--[if lte IE 9]>
+	<script src="other/jquery.iframe-transport.js"></script>    
+	<![endif]-->
+	<!-- BJUI.all 分模块压缩版 -->
+	<script src="js/bjui-all.js"></script>
+	<!--
+	<script src="js/bjui-core.js"></script>
+	<script src="js/bjui-regional.zh-CN.js"></script>
+	<script src="js/bjui-frag.js"></script>
+	<script src="js/bjui-extends.js"></script>
+	<script src="js/bjui-basedrag.js"></script>
+	<script src="js/bjui-slidebar.js"></script>
+	<script src="js/bjui-contextmenu.js"></script>
+	<script src="js/bjui-navtab.js"></script>
+	<script src="js/bjui-dialog.js"></script>
+	<script src="js/bjui-taskbar.js"></script>
+	<script src="js/bjui-ajax.js"></script>
+	<script src="js/bjui-alertmsg.js"></script>
+	<script src="js/bjui-pagination.js"></script>
+	<script src="js/bjui-util.date.js"></script>
+	<script src="js/bjui-datepicker.js"></script>
+	<script src="js/bjui-ajaxtab.js"></script>
+	<script src="js/bjui-datagrid.js"></script>
+	<script src="js/bjui-tablefixed.js"></script>
+	<script src="js/bjui-tabledit.js"></script>
+	<script src="js/bjui-spinner.js"></script>
+	<script src="js/bjui-lookup.js"></script>
+	<script src="js/bjui-tags.js"></script>
+	<script src="js/bjui-upload.js"></script>
+	<script src="js/bjui-theme.js"></script>
+	<script src="js/bjui-initui.js"></script>
+	<script src="js/bjui-plugins.js"></script>
+	-->
+	<!-- plugins -->
+	<!-- swfupload for uploadify && kindeditor -->
+	<script src="plugins/swfupload/swfupload.js"></script>
+	<!-- kindeditor -->
+	<script src="plugins/kindeditor_4.1.10/kindeditor-all.min.js"></script>
+	<script src="plugins/kindeditor_4.1.10/lang/zh_CN.js"></script>
+	<!-- colorpicker -->
+	<script src="plugins/colorpicker/js/bootstrap-colorpicker.min.js"></script>
+	<!-- ztree -->
+	<script src="plugins/ztree/jquery.ztree.all-3.5.js"></script>
+	<!-- nice validate -->
+	<script src="plugins/niceValidator/jquery.validator.js"></script>
+	<script src="plugins/niceValidator/jquery.validator.themes.js"></script>
+	<!-- bootstrap plugins -->
+	<script src="plugins/bootstrap.min.js"></script>
+	<script src="plugins/bootstrapSelect/bootstrap-select.min.js"></script>
+	<script src="plugins/bootstrapSelect/defaults-zh_CN.min.js"></script>
+	<!-- icheck -->
+	<script src="plugins/icheck/icheck.min.js"></script>
+	<!-- dragsort -->
+	<script src="plugins/dragsort/jquery.dragsort-0.5.1.min.js"></script>
+	<!-- HighCharts -->
+	<script src="plugins/highcharts/highcharts.js"></script>
+	<script src="plugins/highcharts/highcharts-3d.js"></script>
+	<script src="plugins/highcharts/themes/gray.js"></script>
+	<!-- ECharts -->
+	<script src="plugins/echarts/echarts.js"></script>
+	<!-- other plugins -->
+	<script src="plugins/other/jquery.autosize.js"></script>
+	<link href="plugins/uploadify/css/uploadify.css" rel="stylesheet">
+	<script src="plugins/uploadify/scripts/jquery.uploadify.min.js"></script>
+	<script src="plugins/download/jquery.fileDownload.js"></script>
+</head>
+<body>
+	<header id="bjui-header">
+	    <!-- 快捷菜单(消息、用户信息、切换皮肤) -->
+        <div class="bjui-navbar-header">
+            <a class="bjui-navbar-logo" href="#"><img src="img/top_logo.png"></a>
+        </div>
+         <nav id="bjui-navbar-collapse">
+            <ul class="bjui-navbar-right">
+                <li class="datetime"><div><span id="bjui-date"></span> <span id="bjui-clock"></span></div></li>
+                <!-- <li><a href="#">消息 <span class="badge">4</span></a></li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">我的账户 <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="changepwd.html" data-toggle="dialog" data-id="changepwd_page" data-mask="true" data-width="400" data-height="260">&nbsp;<span class="glyphicon glyphicon-lock"></span> 修改密码&nbsp;</a></li>
+                        <li><a href="#">&nbsp;<span class="glyphicon glyphicon-user"></span> 我的资料</a></li>
+                        <li class="divider"></li>
+                        <li><a href="login.html" class="red">&nbsp;<span class="glyphicon glyphicon-off"></span> 注销登陆</a></li>
+                    </ul>
+                </li> -->
+            </ul>
+        </nav> 
+	    <div id="bjui-hnav">
+	    	<!-- <button type="button" class="bjui-hnav-toggle btn-default" data-toggle="collapse" data-target="#bjui-hnav-navbar">
+		        <i class="fa fa-bars"></i>
+		    </button> -->
+
+	    	<ul id="bjui-hnav-navbar">
+	    		<li class="active"><a href="javascript:;" data-toggle="slidebar"><i class="fa fa-check-square-o"></i> 票据维护</a>
+                        <div class="items hide" data-noinit="true">
+                            <ul id="bjui-hnav-tree1" class="ztree ztree_main" data-toggle="ztree" data-on-click="MainMenuClick" data-expand-all="true" data-faicon="check-square-o">
+                                <li data-id="1" data-pid="0" data-faicon="folder-open-o" data-faicon-close="folder-o">票据维护</li>
+                                <li data-id="10" data-pid="1" data-url="form-button.html" data-tabid="form-button" data-faicon="hand-o-up">新建票据</li>
+                                <li data-id="11" data-pid="1" data-url="form-input.html" data-tabid="form-input" data-faicon="terminal">票据审批</li>
+                                <li data-id="12" data-pid="1" data-url="form-select.html" data-tabid="form-select" data-faicon="caret-square-o-down">票据信息更新</li>
+                            </ul>
+                        </div>
+                    </li>
+
+	    		<li class="active"><a href="javascript:;" data-toggle="sliderbar"><i class="fa fa-coffee"></i>融资</a>
+	    			<div class="items hide" data-noint="true">
+                            <ul id="bjui-hnav-tree2" class="ztree ztree_main" data-toggle="ztree" data-on-click="MainMenuClick" data-expand-all="true" data-faicon="check-square-o">
+                                <li data-id="1" data-pid="0" data-faicon="folder-open-o" data-faicon-close="folder-o">融资</li>
+                                <li data-id="10" data-pid="1" data-url="form-button.html" data-tabid="form-button" data-faicon="hand-o-up">新建融资</li>
+                                <li data-id="11" data-pid="1" data-url="form-input.html" data-tabid="form-input" data-faicon="terminal">融资审批</li>
+                                <li data-id="12" data-pid="1" data-url="form-select.html" data-tabid="form-select" data-faicon="caret-square-o-down">融资状态更新</li>
+                            </ul>
+	    			</div>
+	    		</li>
+	    		<li><a href="javascript:;" data-toggle="slidebar"><i class="fa fa-coffee"></i>表单菜单2</a></li>
+	    		<!-- 下拉菜单 - BEGIN -->
+		        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-coffee"></i>下拉菜单<span class="caret"></span></a>
+		            <ul class="dropdown-menu" role="menu">
+		                <li><a href="#"> 下拉菜单一 </a></li>
+		                <li><a href="#"> 下拉菜单二 </a></li>
+		                ...
+		            </ul>
+		        </li><!-- 下拉菜单 - END -->
+
+	    	</ul>
+	    </div>
+	</header>
+
+	<div id="bjui-container" class="clearfix">
+	    <div id="bjui-leftside">
+	        <!-- 导航栏 -->
+	        <div id="bjui-sidebar-s">
+                <div class="collapse"></div>
+            </div>
+            <div id="bjui-sidebar">
+                <div class="toggleCollapse"><h2><i class="fa fa-bars"></i> 导航栏 <i class="fa fa-bars"></i></h2><a href="javascript:;" class="lock"><i class="fa fa-lock"></i></a></div>
+                <div class="panel-group panel-main" data-toggle="accordion" id="bjui-accordionmenu" data-heightbox="#bjui-sidebar" data-offsety="26"></div>
+            </div>
+	    </div>
+
+
+
+	    <div id="bjui-navtab" class="tabsPage">
+		    <div class="tabsPageHeader">
+		        <div class="tabsPageHeaderContent">
+		            <ul class="navtab-tab nav nav-tabs">
+		                <li><a href="javascript:;"><span>我的主页</span></a></li>
+		            </ul>
+		        </div>
+		        <!-- <div class="tabsLeft"><i class="fa fa-angle-double-left"></i>tabsLeft</div>
+		        <div class="tabsRight"><i class="fa fa-angle-double-right"></i>tabsRight</div> -->
+		        <div class="tabsMore"><i class="fa fa-angle-double-down"></i>tabsMore</div>
+		    </div>
+
+		    <ul class="tabsMoreList">
+		        <li><a href="javascript:;">主页</a></li>
+		        <li><a href="javascript:;">我的主页</a></li>
+		    </ul>
+
+		    <div class="navtab-panel tabsPageContent">
+		        <div class="page unitBox">
+		            <!-- 主页内容 -->
+		            </br>主页内容</br></br></br>
+		            <a href="./pages/dialog_demo.html" data-toggle="navtab" data-id="navtab-form" data-title="票据页面">新建表单  navtab</a></br></br></br></br></br></br>
+		        </div>
+		        <!-- 各页片内容区域 -->
+		    </div>
+		</div>
+
+
+	</div>
+	<footer id="bjui-footer">
+	    <!-- 页脚 -->
+	    版权所有 © <a href="http://www.lu.com/" target="_blank"><u>上海陆家嘴国际金融资产交易市场股份有限公司</u></a>
+	</footer>
+</body>
+<!-- init -->
+<script type="text/javascript">
+$(function() {
+    BJUI.init({
+        JSPATH       : 'js/',         //[可选]框架路径
+        PLUGINPATH   : 'plugins/', //[可选]插件路径
+        loginInfo    : {url:'pages/login_timeout.html', title:'登录', width:400, height:200}, // 会话超时后弹出登录对话框
+        statusCode   : {ok:200, error:300, timeout:301}, //[可选] ajax回调函数的状态码
+        ajaxTimeout  : 5000, //[可选]全局Ajax请求超时时间(毫秒)
+        pageInfo     : {total:'total', pageCurrent:'pageCurrent', pageSize:'pageSize', orderField:'orderField', orderDirection:'orderDirection'}, //[可选]分页参数key
+        alertMsg     : {displayPosition:'topcenter', displayMode:'slide', alertTimeout:3000}, //[可选]信息提示的显示位置，显隐方式，及[info/correct]方式时自动关闭延时(毫秒)
+        keys         : {statusCode:'statusCode', message:'message'}, //[可选] ajax回调函数的key
+        ui           : {
+                         windowWidth      : 0, //框架显示宽度，0=100%宽，> 600为则居中显示
+                         showSlidebar     : true, //[可选]左侧导航栏锁定/隐藏
+                         clientPaging     : true, //[可选]是否在客户端响应分页及排序参数
+                         overwriteHomeTab : false //[可选]当打开一个未定义id的navtab时，是否可以覆盖主navtab(我的主页)
+                       },
+        debug        : true,    // [可选]调试模式 [true|false，默认false]
+        theme        : 'purple' // 若有Cookie['bjui_theme'],优先选择Cookie['bjui_theme']。皮肤[六种皮肤:default, orange, purple, blue, red, green]
+    })
+
+    
+    //时钟
+    var today = new Date()
+    var todaySeconds = new Date(today.setSeconds(today.getSeconds() + 1))
+    $('#bjui-date').html("时间:" + today.formatDate('yyyy/MM/dd'))
+    $('#bjui-clock').html(todaySeconds.formatDate('HH:mm:ss'))
+    setInterval(function() {
+        today = new Date(today.setSeconds(today.getSeconds() + 1))
+        $('#bjui-clock').html(today.formatDate('HH:mm:ss'))
+    }, 1000)
+})
+
+//菜单-事件
+function MainMenuClick(event, treeId, treeNode) {
+    event.preventDefault()
+    
+    if (treeNode.isParent) {
+        var zTree = $.fn.zTree.getZTreeObj(treeId)
+        
+        zTree.expandNode(treeNode, !treeNode.open, false, true, true)
+        return
+    }
+    
+    if (treeNode.target && treeNode.target == 'dialog')
+        $(event.target).dialog({id:treeNode.tabid, url:treeNode.url, title:treeNode.name})
+    else
+        $(event.target).navtab({id:treeNode.tabid, url:treeNode.url, title:treeNode.name, fresh:treeNode.fresh, external:treeNode.external})
+}
+
+</script>
+</html>
